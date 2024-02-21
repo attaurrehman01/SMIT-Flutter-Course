@@ -30,7 +30,9 @@ main() {
 
   Customer customer = Customer(name, address, phone);
 
-  while (true) {
+  bool end = true;
+
+  while (end == true) {
     print("\nSelect a Menu:");
     print("1. Fast Food");
     print("2. Desi Dishes");
@@ -50,12 +52,15 @@ main() {
       case 3:
         menu = Dessert_and_Drinks();
         break;
+      case 0:
+        exit(0);
       default:
         print("Invalid choice. Please try again.");
         continue;
     }
 
     if (menuChoice == 0) {
+      end = false;
       break;
     }
 
